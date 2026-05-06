@@ -1,0 +1,161 @@
+/* --- App.css --- */
+
+/* 1. Fondo y Tipografía Global */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Fondo oscuro tipo Spotify */
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 2. Encabezado Principal */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.conteo-container {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #b3b3b3; /* Gris suave */
+  font-size: 1.1rem;
+}
+
+.conteo-numero {
+  color: #1db954; /* Verde Spotify para el número */
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* 3. Contenedor de la Cuadrícula (Grid) */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* 4. Diseño de la Tarjeta de Video */
+.video-card {
+  background-color: #1e1e1e; /* Gris muy oscuro para la tarjeta */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card:hover {
+  transform: translateY(-5px); /* Efecto de levante */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  background-color: #2a2a2a; /* Brillo suave al hover */
+}
+
+/* 5. Imagen de Portada (Thumbnail) */
+.thumbnail-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Relación de aspecto 16:9 */
+  overflow: hidden;
+}
+
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen llene el espacio */
+  transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail {
+  transform: scale(1.05); /* Zoom suave en la imagen */
+}
+
+/* 6. Información del Video (Texto) */
+.video-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  /* Limitar a 2 líneas con puntos suspensivos */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-channel {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin: 0 0 15px 0;
+}
+
+/* 7. Botones de Acción */
+.video-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px; /* Botones redondeados modernos */
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio para el icono */
+}
+
+.btn:active {
+  transform: scale(0.97); /* Efecto de clic */
+}
+
+/* Botón Reproducir (Verde) */
+.btn-play {
+  background-color: #1db954; /* Verde Spotify */
+  color: #ffffff;
+}
+
+.btn-play:hover {
+  background-color: #1ed760;
+}
+
+/* Botón Descargar (Gris/Transparente) */
+.btn-download {
+  background-color: transparent;
+  border: 1px solid #727272;
+  color: #ffffff;
+}
+
+.btn-download:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
